@@ -60,12 +60,21 @@ class _BottomNavDemoState extends State<BottomNavDemo> {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
       ),
-      floatingActionButton: FloatingActionButton(
-        shape: const CircleBorder(),
-        onPressed: (){
-          Navigator.of(context).push(_slideUp(const AddPage()));
-        },
-        child: const Icon(Icons.add),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: FloatingActionButton(
+          elevation: 0,
+          shape: const CircleBorder(
+            side: BorderSide(
+              color: Colors.blue, width: 4,
+            ),
+
+          ),
+          onPressed: (){
+            Navigator.of(context).push(_slideUp(const AddPage()));
+          },
+          child: const Icon(Icons.add),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
